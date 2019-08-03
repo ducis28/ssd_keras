@@ -92,3 +92,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# datasets
+VOC2007/
+VOCdevkit/
+VOC*.tar
+VOC*.tar
