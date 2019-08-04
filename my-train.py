@@ -10,6 +10,7 @@ from keras.models import Model
 from keras.preprocessing import image
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 import pickle
 from PIL import Image
 from random import shuffle
@@ -243,6 +244,7 @@ callbacks = [keras.callbacks.ModelCheckpoint('./checkpoints/weights.{epoch:02d}-
                                              verbose=1,
                                              save_weights_only=True),
              keras.callbacks.LearningRateScheduler(schedule)]
+os.makedirs('./checkpoints', exist_ok=True)
 
 base_lr = 3e-4
 optim = keras.optimizers.Adam(lr=base_lr)
