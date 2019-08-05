@@ -4,11 +4,11 @@ import tensorflow as tf
 
 
 def to_float(x):
-    return tf.cast(x, tf.python.framework.dtypes.float32, name='ToFloat')
+    return tf.cast(x, tf.dtypes.float32, name='ToFloat')
 
 
 def to_int32(x):
-    return tf.cast(x, tf.python.framework.dtypes.int32, name='ToInt32')
+    return tf.cast(x, tf.dtypes.int32, name='ToInt32')
 
 
 class MultiboxLoss(object):
