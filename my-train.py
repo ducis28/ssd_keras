@@ -228,10 +228,12 @@ gen = Generator(gt, bbox_util, 4, path_prefix,
 model = SSD300(input_shape, num_classes=NUM_CLASSES)
 #model.load_weights('weights_SSD300.hdf5', by_name=True)
 
-freeze = ['input_1', 'conv1_1', 'conv1_2', 'pool1',
-          'conv2_1', 'conv2_2', 'pool2',
-          'conv3_1', 'conv3_2', 'conv3_3', 'pool3']#,
-#           'conv4_1', 'conv4_2', 'conv4_3', 'pool4']
+freeze = [
+    # 'input_1', 'conv1_1', 'conv1_2', 'pool1',
+    # 'conv2_1', 'conv2_2', 'pool2',
+    # 'conv3_1', 'conv3_2', 'conv3_3', 'pool3',
+    # 'conv4_1', 'conv4_2', 'conv4_3', 'pool4',
+]
 
 for L in model.layers:
     if L.name in freeze:
