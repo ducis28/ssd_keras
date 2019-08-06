@@ -3,6 +3,7 @@
 import numpy as np
 import tensorflow as tf
 from tensorflow.compat.v1 import ConfigProto
+from tensorflow.compat.v1 import GPUOptions
 from tensorflow.compat.v1 import Session
 
 
@@ -34,7 +35,11 @@ class BBoxUtility(object):
         self.nms = tf.image.non_max_suppression(self.boxes, self.scores,
                                                 self._top_k,
                                                 iou_threshold=self._nms_thresh)
-        self.sess = Session(config=ConfigProto(device_count={'GPU': 0}))
+        session_config = ConfigProto(
+            device_count={'GPU': 0},
+            gpu_options=GPUOptions(allow_growth=True),
+        )
+        self.sess = Session(config=session_config)
 
     @property
     def nms_thresh(self):

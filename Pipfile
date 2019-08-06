@@ -7,12 +7,12 @@ verify_ssl = true
 jupyter = "*"
 
 [packages]
-tensorflow = "*"
 opencv-python = "*"
-keras = "*"
 matplotlib = "*"
 pillow = "*"
 imageio = "*"
+tensorflow-gpu = "*"
+keras = "*"
 
 [requires]
 python_version = "3"
